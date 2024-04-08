@@ -1,0 +1,48 @@
+---------------------60. Introduction to excelJS node module and setting up JS Project----------------------------------------------------------
+https://www.npmjs.com/package/exceljs  Read, manipulate and write spreadsheet data and styles to XLSX and JSON.
+dy el steps for create  dependcies 
+1.make dir exceljs
+2.npm init 
+3.npm install exceljs
+4. npm install excelJS --savedev
+-----------------------------61. Traversing rows and columns of excel worksheet with excelJS library---------------------------------------------
+steps mawgooods fe project exceljs 
+tab3ns 3arf javascript is async  kol el steps run paralle lazm t7t el await
+
+//to run file name 
+enter node excelDemo.js
+
+
+// dh el script 
+
+                     const ExcelJs = require('exceljs');
+                     // dh object  ExcelJs
+                     // dh class   exceljs
+                     // dh access el method Workbook()
+                     async function excelTest() {
+                     const workbook = new ExcelJs.Workbook();
+                     await workbook.xlsx.readFile("");
+                     const worksheet = workbook.getWorksheet('Sheet1');
+                     worksheet.eachRow((row, rowNumber) => {
+
+                            row.eachCell((cell, colNumber) => {
+
+                            console.log(cell.value)
+                            })
+
+                     })
+
+                     }
+                     // dh call the method 
+                     excelTest();
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+dh ana bast5dem 3shan replace cell makan cell 
+
+                     const cell = worksheet.getCell(3,2);
+                     cell.value="Iphone";
+                     await workbook.xlsx.readFile("");
+
+---------------------------63. How to get and update the data from excel based on filter search criteria-----------------------------------------------
+
+
